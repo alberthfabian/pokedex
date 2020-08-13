@@ -1,4 +1,4 @@
-const color = {
+const gradient = {
     bug: "var(--gradientBug)",
     dark: "var(--gradientDark)",
     dragon: "var(--gradientDragon)",
@@ -20,12 +20,12 @@ const color = {
     default: "var(--textGeneral)",
 }
 
-export const getColor = (type) => {
-    let typePokemon = color[type];
+export const getGradient = (type) => {
+    let typePokemon = gradient[type];
     if (typePokemon === undefined) {
-        typePokemon = color.default
+        typePokemon = gradient.default
     }
     return typePokemon;
 }
 
-export default color;
+export default gradient;
