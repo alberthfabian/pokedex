@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
+import React  from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import Tooltip from '@material-ui/core/Tooltip';
 import iconFind from '../../img/icon-search.svg';
-import { connect } from 'react-redux';
-
+import { useServer } from '../Context/server';
 
 const MyTooltip = ({title, children}) =>{
   if (title === undefined) {
@@ -17,38 +16,31 @@ const MyTooltip = ({title, children}) =>{
   )
 }
 
-class PokeSeeker extends React.Component {
+const PokeSeeker = (props) => {
 
-  render() {
+  const { jobs, handleChange } = useServer();
+  const { handleClick, tooltip } = props;
 
-    const { handleClick, tooltip } = this.props;
-    return (
-      <div className="pokefinder">
+  return (
+    <div className="pokefinder">
 
-        <MyTooltip title={tooltip}  >
-          <button onClick={handleClick}> <img src={iconFind} alt="IconFind"/></button>
-        </MyTooltip>
-        {this.props.initialPokeData2.length === 0 ? "" : (
-          <Autocomplete
-            id="free-solo-demo"
-            freeSolo
-            disableClearable
-            onChange={this.props.onChange}
-            options={this.props.initialPokeData2.map((option) => option.name_pokemon)}
-            renderInput={(params) => (
-              <TextField {...params} label="" margin="normal" placeholder="Search pokémon" />
-            )}
-          />
-        )}
-      </ div>
-    )
-  }
+      <MyTooltip title={tooltip}  >
+        <button onClick={handleClick}> <img src={iconFind} alt="IconFind"/></button>
+      </MyTooltip>
+      {/* {jobs.length === 0 ? "" : ( */}
+        <Autocomplete
+          id="free-solo-demo"
+          freeSolo
+          disableClearable
+          onChange={handleChange}
+          options={jobs.map((option) => option.name_pokemon)}
+          renderInput={(params) => (
+            <TextField {...params} label="" margin="normal" placeholder="Search pokémon" />
+          )}
+        />
+      {/* )} */}
+    </ div>
+  )
 }
 
-const mapStateToProps = state => ({
-  initialPokeData2: state.pokemon
-}) 
-
-const mapDispatchToProps = dispatch => ({})
-
-export default connect(mapStateToProps, mapDispatchToProps)(PokeSeeker);
+export default PokeSeeker;

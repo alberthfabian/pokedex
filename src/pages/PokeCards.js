@@ -93,22 +93,22 @@ class PokeCards extends React.Component {
     })
   };
 
-  handleChangeDefense = (e, f) => {
-    this.props.setPokemons(this.props.initialPokeSlider)
+  // handleChangeDefense = (e, f) => {
+  //   this.props.setPokemons(this.props.initialPokeSlider)
 
-    this.setState({
-      valorDefense: e,
-      valorDefense2: f
-    })
-  };
+  //   this.setState({
+  //     valorDefense: e,
+  //     valorDefense2: f
+  //   })
+  // };
 
-  handleData = (e, f) => {
-    this.props.setPokemons(this.props.initialPokeSlider)
-    this.setState({
-      valor2: e,
-      valor5: f
-    })
-  };
+  // handleData = (e, f) => {
+  //   this.props.setPokemons(this.props.initialPokeSlider)
+  //   this.setState({
+  //     valor2: e,
+  //     valor5: f
+  //   })
+  // };
 
   handleReset = (e) => {
     this.setState({
@@ -116,12 +116,12 @@ class PokeCards extends React.Component {
     })
   };
 
-  handleChangeProb = (e) => {
-    this.props.setPokemons(this.props.initialPokeSlider)
-    this.setState({
-      valor4: e 
-    });
-  };
+  // handleChangeProb = (e) => {
+  //   this.props.setPokemons(this.props.initialPokeSlider)
+  //   this.setState({
+  //     valor4: e 
+  //   });
+  // };
 
   handleStrong = (e) => {
     this.props.setPokemons(this.props.initialPokeSlider)

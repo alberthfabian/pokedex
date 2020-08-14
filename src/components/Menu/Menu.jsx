@@ -9,10 +9,16 @@ import iconReset from '../../img/icon-reset.svg'
 import iconCollapse from '../../img/icon-collapse.svg'
 import { EmptyPokemons } from '../../Action/PokemonAction';
 import { connect } from 'react-redux';
+// import SliderProbabilidadLegendario from '../SliderProbabilidadLegendario/SliderProbabilidadLegendario';
+import { useServer } from '../Context/server';
+
 
 
 
 const Menu = (props) => {
+
+  const { handleLegendary, handleWeakness, handleStrong, handleReset, handleProLegendary } = useServer();
+
   
   const collapseMenu = () => {
     var menuToggle = document.querySelector('.menu');
@@ -22,8 +28,6 @@ const Menu = (props) => {
     var menuToggle = document.querySelector('.menu');
     menuToggle.classList.remove("collapse")
   };
-
-  
 
   return (
 
@@ -40,30 +44,43 @@ const Menu = (props) => {
             title="Strongest"
             style={{ width: "100%" }}
             tooltip="Strongest"
-            link="/index/strong"
+            link="/index/cards"
+            onClick={handleStrong}
           />
           <PokeButton
             icon={iconWeakness}
             title="Weakness"
             tooltip="Weakness"
+            link="/index/cards"
             style={{ width: "100%" }}
-            link="/index/weakness"
+            onClick={handleWeakness}
           />
           <PokeButton
             icon={iconLegendary}
             title="Legendaries"
             tooltip="Legendaries"
+            link="/index/cards"
             style={{ width: "100%" }}
-            link="/index/legendaries"
-
+            onClick={handleLegendary}
           />
+          <PokeButton
+            icon={iconLegendary}
+            title="Pro.Legendaries"
+            tooltip="Pro.Legendaries"
+            link="/index/cards"
+            style={{ width: "100%" }}
+            onClick={handleProLegendary}
+          />
+          {/* <SliderProbabilidadLegendario handleChangeProb={props.handleChangeProb} /> */}
+
           <PokeButton
             icon={iconReset}
             title="Reset / All"
             tooltip="Reset / All"
             link="/index/cards"
             style={{ width: "100%" }}
-            onClick={() => props.EmptyPokemons()}
+            onClick={handleReset}
+            // onClick={() => props.EmptyPokemons()}
             // onClick={() => props.onChange("")}
           />
           
@@ -74,15 +91,11 @@ const Menu = (props) => {
           title="Collapse"
           className="button-collapse"
           classNameContainer="button-collapse__container"
+          link="/index/cards"
           onClick={collapseMenu}
-          // link="/index/cards"
         />
       </div>
-
-
-
     </>
-
   );
 };
 
@@ -90,5 +103,3 @@ const Menu = (props) => {
 const mapDispatchToProps = { EmptyPokemons }
 
 export default connect(null , mapDispatchToProps)(Menu);
-
-// export default Menu;

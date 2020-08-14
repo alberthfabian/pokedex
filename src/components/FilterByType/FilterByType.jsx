@@ -1,114 +1,111 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Card from '../Card/Card';
+import { useServer } from '../Context/server';
 
 
+const FilterByType = () => {
 
-const FilterByType = (props) => {
+  const { bug, dark, dragon, electric, fairy, fight, fire, flying, ghost, grass, ground, ice, normal, poison, psychic, rock, steel, water, attackTest, attack, valueDefense, defenseTest } = useServer();
 
   return (
     <div className="cards__container">
-{/* handleIconBug handleIconDark handleIconDragon handleIconElectric handleIconFairy handleIconFight handleIconFire handleIconFlying handleIconGhost handleIconGrass handleIconGround handleIconIce handleIconNormal handleIconPoison handleIconPsychic handleIconRock handleIconSteel handleIconWater */}
 
-      {props.handleIconBug === undefined ? "" : props.handleIconBug === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "bug").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      {(bug.length !== 0 || dark.length !== 0 || dragon.length !== 0 || electric.length !== 0 || fairy.length !== 0 || fight.length !== 0 || fire.length !== 0 || flying.length !== 0 || ghost.length !== 0 || grass.length !== 0 || ground.length !== 0 || ice.length !== 0 || normal.length !== 0 || poison.length !== 0 || psychic.length !== 0 || rock.length !== 0 || steel.length !== 0 || water.length !== 0) && (attackTest === false && defenseTest === false) ? <div><h2>{`The selected value is: In Attack between ${attack[0]} - ${attack[1]} - In Defense between ${valueDefense[0]} - ${valueDefense[1]}`}</h2><br/></div> : ''}
+
+      {(bug.length !== 0 || dark.length !== 0 || dragon.length !== 0 || electric.length !== 0 || fairy.length !== 0 || fight.length !== 0 || fire.length !== 0 || flying.length !== 0 || ghost.length !== 0 || grass.length !== 0 || ground.length !== 0 || ice.length !== 0 || normal.length !== 0 || poison.length !== 0 || psychic.length !== 0 || rock.length !== 0 || steel.length !== 0 || water.length !== 0) && (defenseTest.length === 0 || attackTest.length === 0) ? <h1>Por favor deslice los filtros y marque la casilla para iniciar la busqueda</h1> : ''}
+
+      {attackTest === false && defenseTest === false ? bug.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+          <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {props.handleIconDark === undefined ? "" : props.handleIconDark === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "dark").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      )) : '' }
+      {attackTest === false && defenseTest === false ? dark.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {props.handleIconDragon === undefined ? "" : props.handleIconDragon === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "dragon").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      )) : ''}
+      {attackTest === false && defenseTest === false ? dragon.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {props.handleIconElectric === undefined ? "" : props.handleIconElectric === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "electric").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      )) : ''}
+      {attackTest === false && defenseTest === false ? electric.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {props.handleIconFairy === undefined ? "" : props.handleIconFairy === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "fairy").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      )): ''}
+      {attackTest === false && defenseTest === false ? fairy.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {props.handleIconFight === undefined ? "" : props.handleIconFight === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "fighting").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      )) : ''}
+      {attackTest === false && defenseTest === false ? fight.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {props.handleIconFire === undefined ? "" : props.handleIconFire === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "fire").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      )) : ''}
+      {attackTest === false && defenseTest === false ? fire.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {props.handleIconFlying === undefined ? "" : props.handleIconFlying === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "flying").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      )) : ''}
+      {attackTest === false && defenseTest === false ? flying.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {props.handleIconGhost === undefined ? "" : props.handleIconGhost === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "ghost").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      )): ''}
+      {attackTest === false && defenseTest === false ? ghost.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {props.handleIconGrass === undefined ? "" : props.handleIconGrass === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "grass").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      )) : ''}
+      {attackTest === false && defenseTest === false ? grass.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {props.handleIconGround === undefined ? "" : props.handleIconGround === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "ground").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      )) : ''}
+      {attackTest === false && defenseTest === false ? ground.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {props.handleIconIce === undefined ? "" : props.handleIconIce === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "ice").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      )) : ''}
+      {attackTest === false && defenseTest === false ? ice.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {props.handleIconNormal === undefined ? "" : props.handleIconNormal === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "normal").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      )) : ''}
+      {attackTest === false && defenseTest === false ? normal.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {props.handleIconPoison === undefined ? "" : props.handleIconPoison === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "poison").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      )) : ''}
+      {attackTest === false && defenseTest === false ? poison.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {props.handleIconPsychic === undefined ? "" : props.handleIconPsychic === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "psychic").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      )) : ''}
+      {attackTest === false && defenseTest === false ? psychic.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {props.handleIconRock === undefined ? "" : props.handleIconRock === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "rock").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      )) : ''}
+      {attackTest === false && defenseTest === false ? rock.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {props.handleIconSteel === undefined ? "" : props.handleIconSteel === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "steel").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      )) : ''}
+      {attackTest === false && defenseTest === false ? steel.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {props.handleIconWater === undefined ? "" : props.handleIconWater === true ? props.initialFilterByType.filter(pokemon => pokemon.type1 === "water").map(filteredPokemon => (
-        <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+      )) : ''}
+      {attackTest === false && defenseTest === false ? water.filter(find => find.attack > attack[0] && find.defense > valueDefense[0] && find.attack < attack[1] && find.defense < valueDefense[1]).map(filter => (
+        <React.Fragment key={filter.id}>
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} sp_attack={filter.sp_attack} sp_defense={filter.sp_defense}/>
         </React.Fragment> 
-      )) : "" }
-      {/* {props.handleData2 === "" ? "" : } */}
+      )) : ''}
     </div> 
   )
 }
 
-const mapStateToProps = state => ({
-  initialFilterByType: state.pokemon
-}) 
-
-const mapDispatchToProps = dispatch => ({})
-
-export default connect(mapStateToProps, mapDispatchToProps) (FilterByType);
+export default FilterByType;

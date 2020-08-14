@@ -2,11 +2,10 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import './SliderProbabilidadLegendario.scss';
 import { Link } from 'react-router-dom';
-
-import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Box from '@material-ui/core/Box';
+import { useServer } from '../Context/server';
 
 const SliderProbabilidadLegendario = (props) => {
 
@@ -15,11 +14,11 @@ const SliderProbabilidadLegendario = (props) => {
     checkedB: false,
   });
 
-  const handleChangeProb = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-  };
+  const { handleChangeProb } = useServer();
 
-
+  // const handleChangeProb = (event) => {
+  //   setState({ ...state, [event.target.name]: event.target.checked });
+  // };
 
 
   const [stateCheck, setStateCheck] = React.useState({
@@ -39,7 +38,7 @@ const SliderProbabilidadLegendario = (props) => {
               checked={stateCheck.checkedA}
               onChange={handleChangeCheck}
               name="checkedA"
-              onClick={() => props.handleChangeProb(stateCheck.checkedA)}
+              onClick={() => handleChangeProb(stateCheck.checkedA)}
             />
           }
         />

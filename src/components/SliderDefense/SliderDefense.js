@@ -1,15 +1,12 @@
 import React from 'react';
-// import Button from '@material-ui/core/Button';
 import './SliderDefense.scss';
-// import { Link } from 'react-router-dom';
-
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
-
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Box from '@material-ui/core/Box';
+import { useServer } from '../Context/server';
 
 const useStyles = makeStyles({
   root: {
@@ -24,26 +21,12 @@ function valuetextDefense(value) {
 const SliderDefense = (props) => {
 
   const classes = useStyles();
-
-  const [valueDefense, setValueDefense] = React.useState([60, 100]);
+  const [valueDefense, setValueDefense] = React.useState([5, 230]);
+  const { handleChangeDefense } = useServer();
   
-  const handleChangeDefense = (event, newValue) => {
+  const handleChange = (event, newValue) => {
     setValueDefense(newValue);
-    
-    // console.log("Hola")
   };
-
-  // const [state, setState] = React.useState({
-  //   checkedA: true,
-  //   checkedB: false,
-  // });
-
-  // const handleChangeProb = (event) => {
-  //   setState({ ...state, [event.target.name]: event.target.checked });
-  // };
-
-
-
 
   const [stateCheck, setStateCheck] = React.useState({
     checkedA: false
@@ -62,7 +45,7 @@ const SliderDefense = (props) => {
               checked={stateCheck.checkedA} 
               onChange={handleChangeCheck} 
               name="checkedA" 
-              onClick={() => props.handleChangeDefense(stateCheck.checkedA, valueDefense) }
+              onClick={() => handleChangeDefense(stateCheck.checkedA, valueDefense) }
             />
           }
         />
@@ -73,7 +56,7 @@ const SliderDefense = (props) => {
         </Typography>
         <Slider
           value={valueDefense}
-          onChange={handleChangeDefense}
+          onChange={handleChange}
           valueLabelDisplay="auto"
           min={5}
           max={230}

@@ -1,16 +1,7 @@
 import React, { useEffect } from 'react';
-// import PokeData from '../PokeData';
-import { getType } from '../../img/images';
 import { connect } from 'react-redux';
 import Card from '../Card/Card';
 import { getStrongest } from '../../Action/PokemonAction';
-
-const testPokemon = {
-  type: 'asd',
-}
-
-var progressValue = "60%"
-var progressValue2 = "55%"
 
 const Strongest = (props) => {
 
@@ -23,7 +14,6 @@ const Strongest = (props) => {
         console.log(resp);
         props.getStrongest(resp)
         return resp
-        // console.log(resp);
       } catch (error) {
         console.log(error)
       }

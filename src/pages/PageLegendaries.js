@@ -1,18 +1,12 @@
 import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
-// import AlternativeMenu from '../components/AlternativeMenu/AlternativeMenu';
 import Menu from '../components/Menu/Menu';
-// import images from '../img/images';
-// import bug from '../img/types/bug.svg';
 import CardMain from '../components/CardMain/CardMain';
 import FilterAttack from '../components/FilterAttack/FilterAttack';
 import { connect } from 'react-redux';
 import FilterDefense from '../components/FilterDefense/FilterDefense';
 import FilterProbLegend from '../components/FilterProbLegend/FilterProbLegend';
 import FilterLegendaries from '../components/FilterLegendaries/FilterLegendaries';
-// import { Provider } from 'react-redux';
-// import store from '../Store/store';
-// import { createStore } from 'redux';
 
 class PageLegendaries extends React.Component {
 
@@ -63,6 +57,7 @@ class PageLegendaries extends React.Component {
     this.setState({
       valor4: e 
     });
+    console.log(e);
   };
 
   handleStrong = (e) => {
@@ -70,7 +65,6 @@ class PageLegendaries extends React.Component {
       valorStrong: e 
     });
   };
-
 
   render() {
     return (
@@ -82,7 +76,6 @@ class PageLegendaries extends React.Component {
 
           {this.state.valor3 === 1 ? window.location.reload() : null}
 
-            {/* {this.state.valor2.length === 0 ? 'No hay datos' : 'Si hay datos'} */}
             <CardMain send={this.state.change1.valor1} />
             <FilterAttack handleData={this.state.valor5} handleData2={this.state.valor2}/>
             <FilterDefense handleChangeDefense={this.state.valorDefense} handleChangeDefense2={this.state.valorDefense2}/>
@@ -92,15 +85,6 @@ class PageLegendaries extends React.Component {
 
           </div> 
         </div>
-        {console.log(this.state.valorStrong)} 
-        {/* {console.log(this.state.valor5)}  */}
-
-        {/* {console.log(this.state.setValue)}  */}
-
-        {/* <div style={{ background: "black", padding: "20px" }}>
-          <img src={images.bug} />
-          <img src={bug} />
-        </div> */}
 
       </div>
     )

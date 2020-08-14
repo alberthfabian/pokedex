@@ -4,7 +4,7 @@ import images from '../../img/images';
 
 const Card = (props) => {
 
-  const { id, generation, name_pokemon, type1, type2, abilities, experience_growt, sp_attack, sp_defense } = props;
+  const { id, generation, name_pokemon, type1, type2, abilities, experience_growt, attack, defense } = props;
 
   return (
 
@@ -83,13 +83,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorBug", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorBug", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorBug", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorBug", width: defense }}></div>
               </div>
             </div>
           </div>
@@ -167,13 +167,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorDark", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorDark", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorDark", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorDark", width: defense }}></div>
               </div>
             </div>
           </div>
@@ -251,13 +251,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorDragon", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorDragon", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorDragon", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorDragon", width: defense }}></div>
               </div>
             </div>
           </div>
@@ -335,13 +335,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorElectric", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorElectric", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorElectric", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorElectric", width: defense }}></div>
               </div>
             </div>
           </div>
@@ -419,13 +419,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorFairy)", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorFairy)", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorFairy)", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorFairy)", width: defense }}></div>
               </div>
             </div>
           </div>
@@ -503,13 +503,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorFight)", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorFight)", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorFight)", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorFight)", width: defense }}></div>
               </div>
             </div>
           </div>
@@ -587,13 +587,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorFire)", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorFire)", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorFire", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorFire", width: defense }}></div>
               </div>
             </div>
           </div>
@@ -671,13 +671,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorFlying)", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorFlying)", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorFlying)", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorFlying)", width: defense }}></div>
               </div>
             </div>
           </div>
@@ -755,13 +755,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorGhost)", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorGhost)", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorGhost)", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorGhost)", width: defense }}></div>
               </div>
             </div>
           </div>
@@ -839,13 +839,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorGrass)", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorGrass)", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorGrass", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorGrass", width: defense }}></div>
               </div>
             </div>
           </div>
@@ -923,13 +923,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorGround)", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorGround)", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorGround)", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorGround)", width: defense }}></div>
               </div>
             </div>
           </div>
@@ -1007,13 +1007,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorIce)", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorIce)", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorIce)", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorIce)", width: defense }}></div>
               </div>
             </div>
           </div>
@@ -1091,13 +1091,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorNormal)", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorNormal)", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorNormal)", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorNormal)", width: defense }}></div>
               </div>
             </div>
           </div>
@@ -1175,13 +1175,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorPoison)", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorPoison)", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorPoison)", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorPoison)", width: defense }}></div>
               </div>
             </div>
           </div>
@@ -1259,13 +1259,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorPsychic)", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorPsychic)", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorPsychic)", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorPsychic)", width: defense }}></div>
               </div>
             </div>
           </div>
@@ -1343,13 +1343,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorRock)", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorRock)", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorRock)", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorRock)", width: defense }}></div>
               </div>
             </div>
           </div>
@@ -1427,13 +1427,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorSteel)", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorSteel)", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorSteel)", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorSteel)", width: defense }}></div>
               </div>
             </div>
           </div>
@@ -1511,13 +1511,13 @@ const Card = (props) => {
             <div className="card__progress">
               <span className="label">ATK</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorWater)", width: sp_attack }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorWater)", width: attack }}></div>
               </div>
             </div>
             <div className="card__progress">
               <span className="label">DEF</span>
               <div className="poke-progress" style={{ backgroundColor: "var(--grayGeneral)" }}>
-                <div className="progress" style={{ backgroundColor: "var(--colorWater)", width: sp_defense }}></div>
+                <div className="progress" style={{ backgroundColor: "var(--colorWater)", width: defense }}></div>
               </div>
             </div>
           </div>

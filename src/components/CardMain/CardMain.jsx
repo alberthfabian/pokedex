@@ -1,78 +1,50 @@
-import React, { useEffect } from 'react';
-// import PokeData from '../PokeData';
-import { getType } from '../../img/images';
-import { connect } from 'react-redux';
+import React from 'react';
 import Card from '../Card/Card';
-import { getPokemon, setPokemons } from '../../Action/PokemonAction';
-
+import { useServer } from '../Context/server';
 
 
 const CardMain = (props) => {
 
-  useEffect ( () => {
-
-    const getApi = async () => {
-      try {
-        const data = await fetch ('https://protected-castle-45403.herokuapp.com/pokemon/?format=json')
-        const resp = await data.json();
-        props.getPokemon(resp)
-        props.setPokemons(resp)
-        // console.log(resp)
-        return resp
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getApi();
-  }, [])
-
-  // useEffect ( () => {
-
-  //   const getApi = async () => {
-  //     try {
-  //       const data = await fetch ('http://localhost:3000/pokemon')
-  //       const resp = await data.json();
-  //       props.getPokemon(resp)
-  //       props.setPokemons(resp)
-  //       console.log(resp)
-  //       return resp
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
-  //   }
-  //   getApi();
-  // }, [])
+  var { search, legendary, weakness, strong, jobsAll, proLegendary } = useServer();
 
   return (
 
-    <div className="cards__container">    
-     
-        {/* {console.log(props.currentPokemon.length)} */}
-        {/* {props.currentPokemons.length === 0 && ""}
-          {props.currentPokemons.map(filteredPokemon => (
-          <React.Fragment key={filteredPokemon.id}>
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+    <div className="cards__container"> 
+        
+        {search.length === 0 && legendary.length === 0 && weakness.length === 0 && strong.length === 0 && proLegendary.length === 0 ? jobsAll.map(filter => (
+          <React.Fragment key={filter.id}> 
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} attack={filter.attack} defense={filter.defense}/>
           </React.Fragment>
-        ))}   */}
+        )) : ''}
 
-        {props.currentPokemons.length === 0 && ""}
-          {props.currentPokemons.filter(pokemon => pokemon.name_pokemon === props.send).map(filteredPokemon => (
-          <React.Fragment key={filteredPokemon.id}>
-            
-            <Card id={filteredPokemon.id} generation={filteredPokemon.generation} name_pokemon={filteredPokemon.name_pokemon} type1={filteredPokemon.type1} type2={filteredPokemon.type2} abilities={filteredPokemon.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filteredPokemon.experience_growt} sp_attack={filteredPokemon.sp_attack} sp_defense={filteredPokemon.sp_defense}/>
+        
+
+        {search.map(filter => (
+          <React.Fragment key={filter.id}> 
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} attack={filter.attack} defense={filter.defense}/>
           </React.Fragment>
         ))}
 
-     
+        {legendary.map(filter => (
+          <React.Fragment key={filter.id}> 
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} attack={filter.attack} defense={filter.defense}/>
+          </React.Fragment>
+        ))}
+
+        {weakness.map(filter => (
+          <React.Fragment key={filter.id}> 
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} attack={filter.attack} defense={filter.defense}/>
+          </React.Fragment>
+        ))}
+
+        {strong.map(filter => (
+          <React.Fragment key={filter.id}> 
+            <Card id={filter.id} generation={filter.generation} name_pokemon={filter.name_pokemon} type1={filter.type1} type2={filter.type2} abilities={filter.abilities.match(/[a-zA-Z]+\s?[a-zA-Z]+/g).join(' - ')} experience_growt={filter.experience_growt} attack={filter.attack} defense={filter.defense}/>
+          </React.Fragment>
+        ))}
+        
     </div>
   )
 }
 
-const mapStateToProps = state => ({
-  initialState: state.pokemon,
-  currentPokemons: state.currentPokemons
-}) 
-
-const mapDispatchToProps = { getPokemon,  setPokemons}
-
-export default connect(mapStateToProps, mapDispatchToProps)(CardMain);
+export default CardMain;

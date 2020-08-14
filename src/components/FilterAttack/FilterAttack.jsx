@@ -7,6 +7,9 @@ import { setPokemons } from '../../Action/PokemonAction';
 
 const FilterAttack = (props) => {
 
+  // console.log(props.handleData[0])
+  // console.log(props.handleData[1])
+
   return (
     <div className="cards__container cards__container-atack">
  
