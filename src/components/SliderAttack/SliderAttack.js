@@ -8,7 +8,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Box from '@material-ui/core/Box';
 import { useServer } from '../Context/server';
 
-
 const useStyles = makeStyles({
   root: {
     width: "100%",
@@ -23,7 +22,7 @@ const SliderAttack = (props) => {
 
   const classes = useStyles();
   const [value, setValue] = React.useState([5, 185]);
-  var { handleData } = useServer();
+  var { handleData, attack } = useServer();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -53,7 +52,7 @@ const SliderAttack = (props) => {
       </div>
       <div className="filter__slider">
         <Typography id="range-slider" gutterBottom style={{ color: "var(--textGeneral)" }}>
-          Attack 
+          Attack   
         </Typography>
         <Slider
           value={value}
@@ -64,7 +63,7 @@ const SliderAttack = (props) => {
           aria-labelledby="range-slider"
           getAriaValueText={valuetext}
         />
-
+        <p>{attack[0] === undefined ? '' : ` ${attack[0]} - ${attack[1]}`}</p>
       </div>
        
     </Box>

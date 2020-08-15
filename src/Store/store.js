@@ -12,32 +12,20 @@ const reducerPokemon = (state = initialState, action) => {
       return {
         ...state, pokemon: [...action.payload]
       }
-      break;
+      // break;
 
       case "EMPTY_POKEMONS":
       return {
         ...state, currentPokemons: []
       }
-      break;
+      // break;
 
       case "SET_POKEMONS":
       // state.currentPokemons = [] 
       return {
         ...state, currentPokemons: [...action.payload]
       }
-      break;
-
-    // case "SET_FILTER":
-    //   return {
-    //     ...state, currentPokemons: [...action.payload]
-    //   }
-    //   break;
-
-    // case "SET_STRONGEST":
-    //   return {
-    //     ...state, pokeStrongest: [...action.payload]
-    //   }
-    //   break;
+      // break;
 
     default:
 

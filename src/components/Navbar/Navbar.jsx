@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
-import { Toolbar } from '@material-ui/core';
 import logo from '../../img/lookemall.svg'
-
+import { Link } from 'react-router-dom';
 export default class Navbar extends Component {
 
     render() {
-        const { icon, title, link, className, style } = this.props;
         return (
             <header>
                 <nav>
-                    <a href="/">
+                    <Link to="/">
                         <img src={logo} width="auto" height="40" alt="logo lokemall" />
-                    </a>
+                    </Link>
                     <ul>
-                        <li><a href="#" >Lookemall</a></li>
-                        {/* <li><a href="#">About</a></li> */}
-
+                        <li><Link to="/" >Lookemall</Link></li>
                     </ul>
                 </nav>
             </header>
-
         );
     }
 }

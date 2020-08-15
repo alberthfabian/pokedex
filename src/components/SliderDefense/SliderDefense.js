@@ -21,8 +21,8 @@ function valuetextDefense(value) {
 const SliderDefense = (props) => {
 
   const classes = useStyles();
-  const [valueDefense, setValueDefense] = React.useState([5, 230]);
-  const { handleChangeDefense } = useServer();
+  const [valueDefense2, setValueDefense] = React.useState([5, 230]);
+  const { handleChangeDefense, valueDefense } = useServer();
   
   const handleChange = (event, newValue) => {
     setValueDefense(newValue);
@@ -45,7 +45,7 @@ const SliderDefense = (props) => {
               checked={stateCheck.checkedA} 
               onChange={handleChangeCheck} 
               name="checkedA" 
-              onClick={() => handleChangeDefense(stateCheck.checkedA, valueDefense) }
+              onClick={() => handleChangeDefense(stateCheck.checkedA, valueDefense2) }
             />
           }
         />
@@ -55,7 +55,7 @@ const SliderDefense = (props) => {
           Defense
         </Typography>
         <Slider
-          value={valueDefense}
+          value={valueDefense2}
           onChange={handleChange}
           valueLabelDisplay="auto"
           min={5}
@@ -63,21 +63,7 @@ const SliderDefense = (props) => {
           aria-labelledby="range-slider"
           getAriaValueText={valuetextDefense}
         />
-          {/* <Button href="/index/defense" size="small" color='primary' variant='contained' onClick={() => props.handleChangeDefense(valueDefense)}>
-          <Link to="/index/defense" className="link">Filter</Link>
-          Filter
-          </Button> */}
-
-        {/* <Switch
-          checked={state.checkedB}
-          onChange={handleChangeProb}
-          color="primary"
-          name="checkedB"
-          inputProps={{ 'aria-label': 'primary checkbox' }}
-          onClick={() => props.handleChangeDefense(state.checkedB, valueDefense) } 
-        /> */}
-        
-
+        <p>{valueDefense[0] === undefined ? '' : ` ${valueDefense[0]} - ${valueDefense[1]}`}</p>
       </div>
     </Box>
   );

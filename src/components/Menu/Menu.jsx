@@ -9,11 +9,7 @@ import iconReset from '../../img/icon-reset.svg'
 import iconCollapse from '../../img/icon-collapse.svg'
 import { EmptyPokemons } from '../../Action/PokemonAction';
 import { connect } from 'react-redux';
-// import SliderProbabilidadLegendario from '../SliderProbabilidadLegendario/SliderProbabilidadLegendario';
 import { useServer } from '../Context/server';
-
-
-
 
 const Menu = (props) => {
 

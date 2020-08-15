@@ -1,12 +1,8 @@
 import React from 'react';
 import '../css/homeImagen.scss'
-import Button from '@material-ui/core/Button';
 import Lookema from '../img/lookemall.svg';
 import Binoculares from '../img/icon-binoculars.svg';
 import PokeButton from '../components/Button/Button';
-
-import images from '../img/images'
-
 
 class Home extends React.Component {
 

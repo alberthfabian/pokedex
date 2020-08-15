@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback} from 'react';
-import { getColor } from '../../styles/gradients';
+import { getColor } from '../../styles/colors';
 
 const Server = React.createContext();
 
@@ -39,6 +39,10 @@ let resultPsychic = 0;
 let resultRock = 0;
 let resultSteel = 0;
 let resultWater = 0;
+let start = 0;
+let end = 4;
+let contPokemon = start;
+let contPokemon2 = 4;
 
 export function ServerProvider(props) {
   const [ jobs, setJobs ] = useState([]);
@@ -70,18 +74,20 @@ export function ServerProvider(props) {
   var [ defenseTest, setDefenseTest ] = useState([])
   var [ valueDefense, setValueDefense ] = useState([])
   var [ proLegendary, setProLegendary ] = useState([])
-
+  var [ open, setOpen ] = useState(false)
+  var [ modalOpen, setModalOpen ] = useState([])
+  var [ pagPokemon, setPagPokemon ] = useState([])
 
   useEffect(() => {
     fetchData()
   }, [])
 
   const fetchData = async () => {
-    // const data = await fetch('https://pokemon333.herokuapp.com/pokemon/?format')
-    const data = await fetch('http://localhost:3000/pokemon')
+    const data = await fetch('https://pokemon333.herokuapp.com/pokemon/?format')
+    // const data = await fetch('http://localhost:3000/pokemon')
     const jobsInfo = await data.json()
     setJobs(jobsInfo);
-    setJobsAll(jobsInfo.filter(pokemon => pokemon.id < 31));
+    setJobsAll(jobsInfo.filter(pokemon => pokemon.id < 5));
   }
 
   const typePokemon = {
@@ -147,6 +153,8 @@ export function ServerProvider(props) {
         } else if(water.length !== 0) {
           cWater = cWater + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -235,6 +243,8 @@ export function ServerProvider(props) {
         } else if(water.length !== 0) {
           cWater = cWater + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -322,6 +332,8 @@ export function ServerProvider(props) {
         } else if(water.length !== 0) {
           cWater = cWater + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -409,6 +421,8 @@ export function ServerProvider(props) {
         } else if(water.length !== 0) {
           cWater = cWater + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -496,6 +510,8 @@ export function ServerProvider(props) {
         } else if(water.length !== 0) {
           cWater = cWater + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -583,6 +599,8 @@ export function ServerProvider(props) {
         } else if(water.length !== 0) {
           cWater = cWater + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -670,6 +688,8 @@ export function ServerProvider(props) {
         } else if(water.length !== 0) {
           cWater = cWater + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -757,6 +777,8 @@ export function ServerProvider(props) {
         } else if(water.length !== 0) {
           cWater = cWater + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -844,6 +866,8 @@ export function ServerProvider(props) {
         } else if(water.length !== 0) {
           cWater = cWater + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -931,6 +955,8 @@ export function ServerProvider(props) {
         } else if(water.length !== 0) {
           cWater = cWater + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -1018,6 +1044,8 @@ export function ServerProvider(props) {
         } else if(water.length !== 0) {
           cWater = cWater + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -1105,6 +1133,8 @@ export function ServerProvider(props) {
         } else if(water.length !== 0) {
           cWater = cWater + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -1192,6 +1222,8 @@ export function ServerProvider(props) {
         } else if(water.length !== 0) {
           cWater = cWater + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -1279,6 +1311,8 @@ export function ServerProvider(props) {
         } else if(water.length !== 0) {
           cWater = cWater + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -1366,6 +1400,8 @@ export function ServerProvider(props) {
         } else if(water.length !== 0) {
           cWater = cWater + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -1453,6 +1489,8 @@ export function ServerProvider(props) {
         } else if(water.length !== 0) {
           cWater = cWater + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -1540,6 +1578,8 @@ export function ServerProvider(props) {
         } else if(water.length !== 0) {
           cWater = cWater + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -1627,6 +1667,8 @@ export function ServerProvider(props) {
         } else if(steel.length !== 0) {
           cSteel = cSteel + 1
         }
+        contPokemon = start;
+        contPokemon2 = end;
         setProLegendary([]);
         setJobsAll([]);
         setStrong([]);
@@ -1712,6 +1754,8 @@ export function ServerProvider(props) {
     document.getElementById('rock').style.background = getColor(typePokemon.default)
     document.getElementById('steel').style.background = getColor(typePokemon.default)
     document.getElementById('water').style.background = getColor(typePokemon.default)
+    contPokemon = start;
+    contPokemon2 = end;
     setProLegendary([]);
     setLegendary([]);
     setWeakness([]);
@@ -1775,6 +1819,8 @@ export function ServerProvider(props) {
     document.getElementById('rock').style.background = getColor(typePokemon.default)
     document.getElementById('steel').style.background = getColor(typePokemon.default)
     document.getElementById('water').style.background = getColor(typePokemon.default)
+    contPokemon = start;
+    contPokemon2 = end;
     setProLegendary([]);
     setSearch([]);
     setWeakness([]);
@@ -1838,6 +1884,8 @@ export function ServerProvider(props) {
     document.getElementById('rock').style.background = getColor(typePokemon.default)
     document.getElementById('steel').style.background = getColor(typePokemon.default)
     document.getElementById('water').style.background = getColor(typePokemon.default)
+    contPokemon = start;
+    contPokemon2 = end;
     setProLegendary([]);
     setSearch([]);
     setLegendary([]);
@@ -1901,6 +1949,8 @@ export function ServerProvider(props) {
     document.getElementById('rock').style.background = getColor(typePokemon.default)
     document.getElementById('steel').style.background = getColor(typePokemon.default)
     document.getElementById('water').style.background = getColor(typePokemon.default)
+    contPokemon = start;
+    contPokemon2 = end;
     setProLegendary([]);
     setSearch([]);
     setLegendary([]);
@@ -1964,9 +2014,12 @@ export function ServerProvider(props) {
     document.getElementById('rock').style.background = getColor(typePokemon.default)
     document.getElementById('steel').style.background = getColor(typePokemon.default)
     document.getElementById('water').style.background = getColor(typePokemon.default)
+    contPokemon = start;
+    contPokemon2 = end;
     setSearch([]);
     setWeakness([]);
     setStrong([]);
+    setLegendary([]);
     setBug([]);
     setDark([]);
     setDragon([]);
@@ -1988,7 +2041,9 @@ export function ServerProvider(props) {
   },[jobs, typePokemon.default])
 
   const handleReset = useCallback((e) => {
-    setJobsAll(jobs.filter(pokemon => pokemon.id < 31));
+    setJobsAll(jobs.filter(pokemon => pokemon.id < 5));
+    contPokemon = start;
+    contPokemon2 = end;
     cBug = 1;
     cDark = 1;
     cDragon = 1;
@@ -2026,6 +2081,8 @@ export function ServerProvider(props) {
     document.getElementById('rock').style.background = getColor(typePokemon.default)
     document.getElementById('steel').style.background = getColor(typePokemon.default)
     document.getElementById('water').style.background = getColor(typePokemon.default)
+    contPokemon = start;
+    contPokemon2 = end;
     setProLegendary([]);
     setStrong([]);
     setSearch([]);
@@ -2061,19 +2118,39 @@ export function ServerProvider(props) {
     setValueDefense(f);
   },[])
 
-  // const handleChangeProb = useCallback((e) => {
-    // this.props.setPokemons(this.props.initialPokeSlider)
-    // this.setState({
-      // setLegendaryPro(e); 
-      // console.log(e, 'e')
-    // });
-  // },[])
+  const onOpen = useCallback((e) => {
+    setModalOpen(jobs.filter(pokemon => pokemon.id === parseInt(e)));
+    setOpen(true);
+  }, [jobs])
+
+  const onClose = useCallback(() => {
+    setOpen(false);
+  }, []) 
+
+  const goAhead = useCallback(() => {
+    contPokemon = contPokemon + end;
+    contPokemon2 = contPokemon2 + end;
+    setJobsAll(jobs.filter(pokemon => pokemon.id > contPokemon && pokemon.id <= contPokemon2));
+  }, [jobs])
+
+  const back = useCallback(() => {
+    if(contPokemon < end) {
+      contPokemon = start;
+      contPokemon2 = end;
+    } else {
+      contPokemon = contPokemon - end;
+      contPokemon2 = contPokemon2 - end;
+    }
+    setJobsAll(jobs.filter(pokemon => pokemon.id > contPokemon && pokemon.id <= contPokemon2));
+    
+  }, [jobs])
+
 
   const value = useMemo(() => {
     return ({
-      proLegendary, defenseTest, valueDefense, attackTest, attack, bug, dark, dragon, electric, fairy, fight, fire, flying, ghost, grass, ground, ice, normal, poison, psychic, rock, steel, water, jobs, jobsAll, search, legendary, weakness, strong, handleChange, handleWeakness, handleStrong, handleLegendary, handleReset, changeColorBug, changeColorDark, changeColorDragon, changeColorElectric, changeColorFairy, changeColorFight, changeColorFire, changeColorFlying, changeColorGhost, changeColorGrass, changeColorGround, changeColorIce, changeColorNormal, changeColorPoison, changeColorPsychic, changeColorRock, changeColorSteel, changeColorWater, handleData, handleChangeDefense, handleProLegendary
+      pagPokemon, setModalOpen, modalOpen, open, proLegendary, defenseTest, valueDefense, attackTest, attack, bug, dark, dragon, electric, fairy, fight, fire, flying, ghost, grass, ground, ice, normal, poison, psychic, rock, steel, water, jobs, jobsAll, search, legendary, weakness, strong, handleChange, handleWeakness, handleStrong, handleLegendary, handleReset, changeColorBug, changeColorDark, changeColorDragon, changeColorElectric, changeColorFairy, changeColorFight, changeColorFire, changeColorFlying, changeColorGhost, changeColorGrass, changeColorGround, changeColorIce, changeColorNormal, changeColorPoison, changeColorPsychic, changeColorRock, changeColorSteel, changeColorWater, handleData, handleChangeDefense, handleProLegendary, onOpen, onClose, goAhead, back
     })
-  }, [proLegendary, defenseTest, valueDefense, attackTest, attack, bug, dark, dragon, electric, fairy, fight, fire, flying, ghost, grass, ground, ice, normal, poison, psychic, rock, steel, water, jobs, jobsAll, search, legendary, weakness, strong, handleChange, handleWeakness, handleStrong, handleLegendary, handleReset, changeColorBug, changeColorDark, changeColorDragon, changeColorElectric, changeColorFairy, changeColorFight, changeColorFire, changeColorFlying, changeColorGhost, changeColorGrass, changeColorGround, changeColorIce, changeColorNormal, changeColorPoison, changeColorPsychic, changeColorRock, changeColorSteel, changeColorWater, handleData, handleChangeDefense, handleProLegendary])
+  }, [pagPokemon, setModalOpen, modalOpen, open, proLegendary, defenseTest, valueDefense, attackTest, attack, bug, dark, dragon, electric, fairy, fight, fire, flying, ghost, grass, ground, ice, normal, poison, psychic, rock, steel, water, jobs, jobsAll, search, legendary, weakness, strong, handleChange, handleWeakness, handleStrong, handleLegendary, handleReset, changeColorBug, changeColorDark, changeColorDragon, changeColorElectric, changeColorFairy, changeColorFight, changeColorFire, changeColorFlying, changeColorGhost, changeColorGrass, changeColorGround, changeColorIce, changeColorNormal, changeColorPoison, changeColorPsychic, changeColorRock, changeColorSteel, changeColorWater, handleData, handleChangeDefense, handleProLegendary, onOpen, onClose, goAhead, back])
 
   return <Server.Provider value={value} {...props} />
 }

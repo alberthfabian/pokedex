@@ -9,7 +9,6 @@ import CheckBoxType from '../CheckBoxType/CheckBoxType'
 import images from '../../img/images';
 import SliderAttack from '../SliderAttack/SliderAttack';
 import SliderDefense from '../SliderDefense/SliderDefense';
-import SliderProbabilidadLegendario from '../SliderProbabilidadLegendario/SliderProbabilidadLegendario';
 import { Tooltip } from '@material-ui/core';
 import { useServer } from '../Context/server';
 
@@ -66,10 +65,7 @@ const PokeFilter = (props) => {
                     <AccordionDetails>
                         <div className="pokefilter__content">
                             <span className="pokefilter__title-types">By type</span>
-
                             <div className="pokefilter__checks-continer">
-
-                                {/* <CheckBoxType tooltipCheck={typePokemon.bug} handleClick={() => props.handleIconBug(1)} icon={getType(typePokemon.type)}/> */}
                                 <CheckBoxType idImg={"bug"} tooltipCheck={typePokemon.bug} handleClick={changeColorBug} icon={images.bug} />
                                 <CheckBoxType idImg={"dark"} tooltipCheck={typePokemon.dark} handleClick={changeColorDark} icon={images.dark} />
                                 <CheckBoxType idImg={"dragon"} tooltipCheck={typePokemon.dragon} handleClick={changeColorDragon} icon={images.dragon} />
@@ -88,12 +84,9 @@ const PokeFilter = (props) => {
                                 <CheckBoxType idImg={"rock"} tooltipCheck={typePokemon.rock} handleClick={changeColorRock} icon={images.rock} />
                                 <CheckBoxType idImg={"steel"} tooltipCheck={typePokemon.steel} handleClick={changeColorSteel} icon={images.steel} />
                                 <CheckBoxType idImg={"water"} tooltipCheck={typePokemon.water} handleClick={changeColorWater} icon={images.water} />
-
-
                             </div>
-                            <SliderAttack handleData={props.handleData} />
-                            <SliderDefense handleChangeDefense={props.handleChangeDefense} />
-                            {/* <SliderProbabilidadLegendario handleChangeProb={props.handleChangeProb} /> */}
+                            <SliderAttack/>
+                            <SliderDefense/>
                         </div>
 
                     </AccordionDetails>

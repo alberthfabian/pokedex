@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Tooltip from '@material-ui/core/Tooltip';
 
-
-
 const MyTooltip = ({ title, children }) => {
   if (title === undefined) {
     return children;
@@ -15,17 +13,11 @@ const MyTooltip = ({ title, children }) => {
   )
 }
 
-// const typePokemon = {
-//   type: 'psychic',
-// }
-
-
 export default class Pokecheck extends Component {
 
   render() {
 
     const { id, handleClick, colorType, icon, idImg, tooltipCheck } = this.props;
-
 
     return (
 
